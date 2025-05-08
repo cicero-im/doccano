@@ -78,7 +78,7 @@ isort = {extras = ["pyproject"], version = "^5.10.1"}
 autopep8 = "^1.6.0"
 mypy = "^1.4.1"
 watchdog = "^2.1.6"
-black = "^22.1.0"
+black = "^24.3.0"
 pyproject-flake8 = "^0.0.1-alpha.2"
 types-chardet = "^4.0.3"
 types-requests = "^2.27.10"
