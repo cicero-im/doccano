@@ -1,10 +1,10 @@
 import abc
 import dataclasses
 import enum
-import random
 from typing import List
 
 import numpy as np
+import secrets
 
 
 @dataclasses.dataclass
@@ -77,6 +77,6 @@ class SamplingWithoutReplacementStrategy(BaseStrategy):
         proba = np.array(self.weights) / 100
         for user, p in enumerate(proba):
             count = int(self.dataset_size * p)
-            examples = random.sample(range(self.dataset_size), count)
+            examples = secrets.SystemRandom().sample(range(self.dataset_size), count)
             assignments.extend([Assignment(user=user, example=example) for example in examples])
         return assignments

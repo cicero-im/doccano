@@ -1,14 +1,14 @@
-import random
 import string
 
 from django.core.exceptions import ValidationError
 from django.db import models
 
 from projects.models import Project
+import secrets
 
 
 def generate_random_hex_color():
-    return f"#{random.randint(0, 0xFFFFFF):06x}"
+    return f"#{secrets.SystemRandom().randint(0, 0xFFFFFF):06x}"
 
 
 class LabelType(models.Model):
